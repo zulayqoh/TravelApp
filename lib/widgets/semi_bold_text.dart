@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_sample/utils/app_color.dart';
+import 'package:travel_app_sample/utils/app_colors.dart';
+import 'package:travel_app_sample/utils/app_constants.dart';
+import 'package:travel_app_sample/utils/app_dimensions.dart';
 
 class SemiBoldText extends StatelessWidget {
   final String text;
@@ -8,9 +10,9 @@ class SemiBoldText extends StatelessWidget {
 
   const SemiBoldText(
       {Key? key,
-        required this.text,
-        this.color = AppColor.appOrangeColor,
-        this.size = 33.0})
+      required this.text,
+      this.color = AppColors.appOrangeColor,
+      this.size = AppDimension.zero})
       : super(key: key);
 
   @override
@@ -19,10 +21,9 @@ class SemiBoldText extends StatelessWidget {
       text,
       style: TextStyle(
           color: color,
-          fontSize: size,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w600
-      ),
+          fontSize: size == AppDimension.zero ? AppDimension.font33 : size,
+          fontFamily: AppConstant.poppins,
+          fontWeight: FontWeight.w600),
     );
   }
 }

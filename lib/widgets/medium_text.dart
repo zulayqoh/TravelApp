@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:travel_app_sample/utils/app_constants.dart';
+import 'package:travel_app_sample/utils/app_dimensions.dart';
 
 class AppMediumText extends StatelessWidget {
   final String text;
@@ -8,9 +9,9 @@ class AppMediumText extends StatelessWidget {
 
   const AppMediumText(
       {Key? key,
-        required this.text,
-        this.color = Colors.white,
-        this.size = 20.0})
+      required this.text,
+      this.color = Colors.white,
+      this.size = AppDimension.zero})
       : super(key: key);
 
   @override
@@ -19,10 +20,9 @@ class AppMediumText extends StatelessWidget {
       text,
       style: TextStyle(
           color: color,
-          fontSize: size,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w500
-      ),
+          fontSize: size == AppDimension.zero ? AppDimension.width20 : size,
+          fontFamily: AppConstant.poppins,
+          fontWeight: FontWeight.w500),
     );
   }
 }

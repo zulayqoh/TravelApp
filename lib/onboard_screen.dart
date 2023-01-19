@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app_sample/utils/app_color.dart';
-import 'package:travel_app_sample/utils/constants.dart';
+import 'package:travel_app_sample/utils/app_colors.dart';
+import 'package:travel_app_sample/utils/app_constants.dart';
+import 'package:travel_app_sample/utils/app_dimensions.dart';
 import 'package:travel_app_sample/widgets/app_button.dart';
 import 'package:travel_app_sample/widgets/app_text.dart';
 import 'package:travel_app_sample/widgets/app_title_text.dart';
@@ -21,15 +22,15 @@ class OnboardScreen extends StatelessWidget {
             children: [
               Container(
                 padding:
-                EdgeInsets.only(top: 50, right: 20, bottom: 20, left: 20),
+                EdgeInsets.only(top: AppDimension.height40, right: AppDimension.width20, bottom: AppDimension.height20, left: AppDimension.width20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppTitleText(
                         text: OnboardDataClass.onboardData[index].title),
                     Container(
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      width: 250,
+                      margin: EdgeInsets.only(top: AppDimension.height10, bottom: AppDimension.height10),
+                      width: AppDimension.height270,
                       child: AppText(
                           text:
                           OnboardDataClass.onboardData[index].description),
@@ -39,8 +40,8 @@ class OnboardScreen extends StatelessWidget {
                       onPress: () {},
                     ),
                     Container(
-                      width: 350,
-                      height: 450,
+                      width: AppDimension.height350,
+                      height: AppDimension.height440,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -48,21 +49,21 @@ class OnboardScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: AppDimension.height20),
                   ],
                 ),
               ),
               Row(
                 children: List.generate(2, (dotIndex) {
                   return Container(
-                    margin: EdgeInsets.all(5),
-                    width: 10,
-                    height: 10,
+                    margin: EdgeInsets.all(AppDimension.width5),
+                    width: AppDimension.width10,
+                    height: AppDimension.height10,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(AppDimension.width5),
                         color: index == dotIndex
-                            ? AppColor.appMainColor
-                            : AppColor.appInactiveColor),
+                            ? AppColors.appMainColor
+                            : AppColors.appInactiveColor),
                   );
                 }),
               )

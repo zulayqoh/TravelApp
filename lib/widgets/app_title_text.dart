@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_sample/utils/app_colors.dart';
+import 'package:travel_app_sample/utils/app_constants.dart';
+import 'package:travel_app_sample/utils/app_dimensions.dart';
 
 class AppTitleText extends StatelessWidget {
   final String text;
@@ -7,9 +10,9 @@ class AppTitleText extends StatelessWidget {
 
   const AppTitleText(
       {Key? key,
-        required this.text,
-        this.color = const Color(0xff312da4),
-        this.size = 30.0})
+      required this.text,
+      this.color = AppColors.appMainColor,
+      this.size = AppDimension.zero})
       : super(key: key);
 
   @override
@@ -17,11 +20,10 @@ class AppTitleText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: color,
-        fontSize: size,
-        fontFamily: 'Poppins',
-        fontWeight: FontWeight.bold
-      ),
+          color: color,
+          fontSize: size == AppDimension.zero ? AppDimension.height30 : size,
+          fontFamily: AppConstant.poppins,
+          fontWeight: FontWeight.bold),
     );
   }
 }

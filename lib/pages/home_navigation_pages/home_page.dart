@@ -74,13 +74,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Align(
             alignment: Alignment.topLeft,
             child: TabBar(
-              // indicator: CircularTabIndicator(radius: 4, color: AppColors.appMainColor),
+              indicator: CircularTabIndicator(radius: 4, color: AppColors.appMainColor),
               labelPadding: EdgeInsets.only(left: 25, right: 25),
-              indicatorPadding: EdgeInsets.only(top: 43, left: 18, right: 18),
-              indicator: BoxDecoration(
-                color: AppColors.appMainColor,
-                borderRadius: BorderRadius.circular(7)
-              ),
+              // indicatorPadding: EdgeInsets.only(top: 43, left: 18, right: 18),
+              // indicator: BoxDecoration(
+              //   color: AppColors.appMainColor,
+              //   borderRadius: BorderRadius.circular(7)
+              // ),
               labelColor: AppColors.appMainColor,
               unselectedLabelColor: AppColors.appInactiveColor,
               indicatorSize: TabBarIndicatorSize.label,

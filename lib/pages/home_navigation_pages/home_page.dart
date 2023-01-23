@@ -74,7 +74,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Align(
             alignment: Alignment.topLeft,
             child: TabBar(
-              indicator: CircularTabIndicator(radius: 4, color: AppColors.appMainColor),
+
+              ///Implemented the Circular tab indicator
+              indicator: CircularTabIndicator(
+                  radius: 4, color: AppColors.appMainColor),
               labelPadding: EdgeInsets.only(left: 25, right: 25),
               // indicatorPadding: EdgeInsets.only(top: 43, left: 18, right: 18),
               // indicator: BoxDecoration(
@@ -102,16 +105,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           Container(
+            margin: EdgeInsets.only(left: 20, top: 20),
             width: double.maxFinite,
-            height: 300,
+            height: 70,
             child: TabBarView(
                 controller: _tabController,
-                children: const [
-              SemiBoldText(text: 'TabView1'),
-              SemiBoldText(text: 'TabView2'),
-              SemiBoldText(text: 'TabView3'),
-              SemiBoldText(text: 'TabView4'),
-            ]),
+                children: [
+                  ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                      itemBuilder: (_, index) {
+                    return Container(
+                      width: 120,
+                      height: 70,
+                      margin: EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          fit: BoxFit.fitHeight,
+                            image: AssetImage('assets/images/canada1.png')),
+                      ),
+                    );
+                  }),
+                  SemiBoldText(text: 'TabView2'),
+                  SemiBoldText(text: 'TabView3'),
+                  SemiBoldText(text: 'TabView4'),
+                ]),
           ),
         ],
       ),

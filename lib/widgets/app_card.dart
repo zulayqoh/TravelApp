@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_sample/utils/app_dimensions.dart';
 
 import '../utils/app_colors.dart';
 import 'app_text.dart';
@@ -12,17 +13,17 @@ class AppCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      margin: EdgeInsets.symmetric(horizontal: AppDimension.width20, vertical: AppDimension.height5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(1, 3), blurRadius: 5),],
+        borderRadius: BorderRadius.circular(AppDimension.width10),
+        boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(1, 3), blurRadius: AppDimension.width5),],
       ),
       child: Column(
         children: [
           Stack(
             children: [
               Container(
-                height: 120,
+                height: AppDimension.height120,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/park1.png'),
@@ -31,28 +32,28 @@ class AppCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 0,
-                right: 0,
+                top: AppDimension.zero,
+                right: AppDimension.zero,
                 child: Container(
-                  height: 30,
-                  width: 30,
+                  height: AppDimension.height30,
+                  width: AppDimension.height30,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(10)),
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(AppDimension.width10)),
                     color: AppColors.appOrangeColor,
                   ),
                   child: Icon(Icons.bookmark_add_outlined, color: Colors.white, size: 17),
                 ),
               ),
               Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
+                bottom: AppDimension.zero,
+                left: AppDimension.zero,
+                right: AppDimension.zero,
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: AppDimension.width10),
                   width: double.maxFinite,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

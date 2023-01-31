@@ -54,6 +54,9 @@ class AppDimension {
   /// 40
   static double height40 = screenHeight / 18.436;
 
+  /// 70
+  static double height70 = screenHeight / 10.535;
+
   /// 100
   static double height100 = screenHeight / 7.374;
 

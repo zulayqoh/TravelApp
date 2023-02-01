@@ -24,11 +24,11 @@ class _MainHomePageState extends State<MainHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.bottomNavigationBackgroundColor,
         type: BottomNavigationBarType.fixed,
-        // backgroundColor: Colors.white,
         onTap: (index) {
           setState(() {
             currentIndex = index;

@@ -7,4 +7,5 @@ class AppColors {
   static const appInactiveColor = Color(0xffa9adcd);
   static const appSearchFillColor = Color(0xffededed);
   static const appSearchHintColor = Color(0xffbcbcbc);
+  static const bottomNavigationBackgroundColor = Color(0xfff2f2f2);
 }

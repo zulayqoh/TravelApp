@@ -14,16 +14,22 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
-  List pages = [
-    HomePage(),
-    CategoryPage(),
-    FavoritePage(),
-    ProfilePage()
-  ];
+  List pages = [HomePage(), CategoryPage(), FavoritePage(), ProfilePage()];
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButton: SizedBox(
+          width: 50,
+          height: 50,
+          child: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: AppColors.appOrangeColor,
+            child: Icon(Icons.add, size: 30),
+          )),
       backgroundColor: Colors.white,
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -34,18 +40,23 @@ class _MainHomePageState extends State<MainHomePage> {
             currentIndex = index;
           });
         },
-        currentIndex: currentIndex ,
-        elevation: 0 ,
+        currentIndex: currentIndex,
+        elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: AppColors.appMainColor,
         unselectedItemColor: AppColors.appInactiveColor,
-        items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.select_all), label: 'Category'),
-        BottomNavigationBarItem(icon: Icon(Icons.bookmark_add_outlined), label: 'Favorite'),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outlined), label: 'Profile'),
-      ],),
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.select_all), label: 'Category'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark_add_outlined), label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_outlined), label: 'Profile'),
+        ],
+      ),
     );
   }
 }

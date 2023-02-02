@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app_sample/custom_icons_icons.dart';
 import 'package:travel_app_sample/utils/app_colors.dart';
 import 'package:travel_app_sample/utils/app_dimensions.dart';
+import 'package:travel_app_sample/widgets/app_text.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -54,6 +56,20 @@ class _DetailPageState extends State<DetailPage> {
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(AppDimension.width25),
                         topLeft: Radius.circular(AppDimension.width25))),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        AppText(text: 'Bali, Indonesia', size: 20, color: Colors.black,),
+                        Icon(CustomIcons.bookmark, size: 21),
+                      ],
+                    ),
+                    SizedBox(height: AppDimension.height5),
+                    AppText(text: 'Etiam facilisis ligula nec velit posuere egestas. Nunc dictum lectus sem, vel dignissim purus luctus quis. Vestibulum et ligula suscipit, hendre rit erat a, ultricies velit. Praesent convallis in lorem nec blandit. Phasellus a porta tellus. Suspenisse sagittis metus enim.', size: 13)
+                  ],
+                ),
               ),
             )
           ],

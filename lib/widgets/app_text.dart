@@ -22,6 +22,7 @@ class AppText extends StatelessWidget {
         fontSize: size == AppDimension.zero ? AppDimension.width10 : size,
         fontFamily: 'Poppins',
       ),
+      textAlign: TextAlign.justify,
     );
   }
 }

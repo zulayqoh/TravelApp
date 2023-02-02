@@ -28,7 +28,7 @@ class _MainHomePageState extends State<MainHomePage> {
           child: FloatingActionButton(
             onPressed: () {},
             backgroundColor: AppColors.appOrangeColor,
-            child: Icon(Icons.add, size: 30),
+            child: Icon(Icons.add, size: 35),
           )),
       backgroundColor: Colors.white,
       body: pages[currentIndex],

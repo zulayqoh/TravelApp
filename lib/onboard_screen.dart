@@ -22,11 +22,6 @@ class OnboardScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
-              TextButton(
-                  onPressed: () {
-                    BlocProvider.of<AppCubit>(context).getData();
-                  },
-                  child: Text('text')),
               Container(
                 padding: EdgeInsets.only(
                     top: AppDimension.height40,
@@ -49,7 +44,9 @@ class OnboardScreen extends StatelessWidget {
                     ),
                     AppButton(
                       buttonTitle: AppConstant.getStarted,
-                      onPress: () {},
+                      onPress: () {
+                        BlocProvider.of<AppCubit>(context).getData();
+                      },
                     ),
                     Container(
                       width: AppDimension.height350,

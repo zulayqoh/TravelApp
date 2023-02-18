@@ -59,12 +59,12 @@ class _DetailPageState extends State<DetailPage> {
                         BlocProvider.of<AppCubit>(context).goHome();
                       },
                       icon: Icon(Icons.menu,
-                          color: AppColors.appMainColor, size: 30),
+                          color: AppColors.appSearchFillColor, size: 30),
                     ),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.more_vert,
-                          color: AppColors.appMainColor, size: 30),
+                          color: AppColors.appSearchFillColor, size: 30),
                     )
                   ],
                 ),
@@ -79,7 +79,7 @@ class _DetailPageState extends State<DetailPage> {
                       left: AppDimension.width20,
                       right: AppDimension.width20),
                   width: double.maxFinite,
-                  height: AppDimension.screenHeight * .66,
+                  height: AppDimension.screenHeight*.67,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(

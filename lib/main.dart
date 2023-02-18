@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:travel_app_sample/cubit/app_cubit.dart';
 import 'package:travel_app_sample/pages/detail_page.dart';
 import 'package:travel_app_sample/pages/home_navigation_pages/main_home_page.dart';
+import 'package:travel_app_sample/services/example_service.dart';
 import 'cubit/app_cubit_logic.dart';
 import 'onboard_screen.dart';
 
@@ -22,10 +23,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(
-        create: (BuildContext context) => AppCubit(),
-        child: AppCubitLogic(),),
+        create: (BuildContext context) =>
+            AppCubit(dataService: ExampleService()),
+        child: AppCubitLogic(),
+      ),
     );
   }
 }
 
+/*
+BlocProvider(
+        create: (BuildContext context) => AppCubit(),
+        child: AppCubitLogic(),),
 
+        BlocProvider.of<AppCubit>(context).getData();
+
+ */

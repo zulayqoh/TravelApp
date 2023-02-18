@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app_sample/cubit/app_cubit.dart';
 import 'package:travel_app_sample/utils/app_colors.dart';
 import 'package:travel_app_sample/utils/app_constants.dart';
 import 'package:travel_app_sample/utils/app_dimensions.dart';
@@ -20,20 +22,30 @@ class OnboardScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
+              TextButton(
+                  onPressed: () {
+                    BlocProvider.of<AppCubit>(context).getData();
+                  },
+                  child: Text('text')),
               Container(
-                padding:
-                EdgeInsets.only(top: AppDimension.height40, right: AppDimension.width20, bottom: AppDimension.height20, left: AppDimension.width20),
+                padding: EdgeInsets.only(
+                    top: AppDimension.height40,
+                    right: AppDimension.width20,
+                    bottom: AppDimension.height20,
+                    left: AppDimension.width20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AppTitleText(
                         text: OnboardDataClass.onboardData[index].title),
                     Container(
-                      margin: EdgeInsets.only(top: AppDimension.height10, bottom: AppDimension.height10),
+                      margin: EdgeInsets.only(
+                          top: AppDimension.height10,
+                          bottom: AppDimension.height10),
                       width: AppDimension.height270,
                       child: AppText(
                           text:
-                          OnboardDataClass.onboardData[index].description),
+                              OnboardDataClass.onboardData[index].description),
                     ),
                     AppButton(
                       buttonTitle: AppConstant.getStarted,
@@ -60,7 +72,8 @@ class OnboardScreen extends StatelessWidget {
                     width: AppDimension.width10,
                     height: AppDimension.height10,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(AppDimension.width5),
+                        borderRadius:
+                            BorderRadius.circular(AppDimension.width5),
                         color: index == dotIndex
                             ? AppColors.appMainColor
                             : AppColors.appInactiveColor),
